@@ -7,32 +7,33 @@
  */
 char **run_arguments(char *line)
 {
-    size_t argurment_count, j;
-    char **tokens;
-    char **arguments;
+	size_t argurment_count, j;
+	char **tokens;
+	char **arguments;
 
-
-    tokens = custom_tokenizer(line, " \t\n", &argurment_count);
-
-    if (argurment_count)
-    {
-        arguments = malloc(sizeof(char *) * (argurment_count + 1));
-        if (arguments == NULL)
-        {
-            perror("./hsh");
-            exit(EXIT_FAILURE);
-        }
-        for (j = 1; j < argurment_count; j++)
-        {
-            arguments[j - 1] = strdup(tokens[j]);
-            if (arguments[j - 1] == NULL)
-            {
-                perror("./hsh");
-                exit(EXIT_FAILURE);
-            }
-        }
-        arguments[argurment_count - 1] = NULL;
-        my_free(tokens);
-        return arguments;
-    }
+	tokens = custom_tokenizer(line, " \t\n", &argurment_count);
+	if (argurment_count)
+	{
+		arguments = malloc(sizeof(char *) * (argurment_count + 1));
+		if (arguments == NULL)
+		{
+			perror("./hsh");
+			exit(EXIT_FAILURE);
+		}
+		for (j = 1; j < argurment_count; j++)
+		{
+			arguments[j - 1] = strdup(tokens[j]);
+			if (arguments[j - 1] == NULL)
+			{
+				perror("./hsh");
+				exit(EXIT_FAILURE);
+			}
+		}
+		arguments[argurment_count - 1] = NULL;
+		my_free(tokens);
+		return (arguments);
+	}
+	my_free(tokens);
+	return (NULL);
+}
 
