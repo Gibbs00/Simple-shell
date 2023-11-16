@@ -1,6 +1,5 @@
-#ifndef SHELL_H
-#define SHELL_H
 
+<<<<<<< HEAD
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -66,3 +65,5 @@ struct flags
 } flags;
 
 #endif
+=======
+>>>>>>> 5fc8929710932422ce1e2b16c016674ba20b3ddb
