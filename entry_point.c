@@ -14,7 +14,7 @@ int main(void)
 	while (true) 
 	{
 		shell_show_prompt();
-		read_command(command, sizeof(command));
+		get_command(command, sizeof(command));
 		exe_command(command);
 	}
 	return (0);

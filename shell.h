@@ -1,5 +1,6 @@
+#ifndef SHELL_H
+#define SHELL_H
 
-<<<<<<< HEAD
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,7 +14,7 @@
 #include <errno.h>
 
 void shell_show_prompt(void);
-void shell_print(const char *message);
+void shell_printf(const char *message);
 void get_command(char *command, size_t size);
 void exe_command(const char *command);
 
@@ -65,5 +66,3 @@ struct flags
 } flags;
 
 #endif
-=======
->>>>>>> 5fc8929710932422ce1e2b16c016674ba20b3ddb
